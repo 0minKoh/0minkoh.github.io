@@ -1,6 +1,5 @@
 /.quarto/
 /_site/
+/context/
 /.DS_Store
-*.typ
-
 **/*.quarto_ipynb

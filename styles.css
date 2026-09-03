@@ -19,7 +19,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+  font-family: "Noto Sans CJK KR", "Noto Sans KR", "Pretendard", "Apple SD Gothic Neo", sans-serif;
   line-height: 1.65;
   overflow-wrap: break-word;
 }
@@ -29,9 +29,11 @@ body {
 }
 
 main#quarto-document-content.content {
-  width: min(100% - 2rem, 52rem);
+  position: relative;
+  width: min(100% - 2rem, 210mm);
+  min-height: 297mm;
   margin: 2.5rem auto;
-  padding: 3rem 3.5rem;
+  padding: 16mm 18mm;
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 0.5rem;
@@ -84,8 +86,10 @@ blockquote {
 
 .pdf-download {
   display: inline-block;
-  float: right;
-  margin: 0 0 1.5rem 1rem;
+  position: absolute;
+  top: 16mm;
+  right: 18mm;
+  margin: 0;
   padding: 0.55rem 0.9rem;
   color: #ffffff;
   background: var(--accent);
@@ -104,6 +108,7 @@ blockquote {
 @media (max-width: 40rem) {
   main#quarto-document-content.content {
     width: 100%;
+    min-height: 0;
     margin: 0;
     padding: 1.5rem 1.25rem 2.5rem;
     border: 0;
@@ -112,7 +117,7 @@ blockquote {
   }
 
   .pdf-download {
-    float: none;
+    position: static;
     margin: 0 0 1.5rem;
   }
 }
@@ -132,6 +137,7 @@ blockquote {
 
   main#quarto-document-content.content {
     width: 100%;
+    min-height: auto;
     margin: 0;
     padding: 0;
     border: 0;
@@ -159,13 +165,18 @@ blockquote {
   h1,
   h2,
   h3 {
-    break-after: avoid;
+    break-after: avoid-page;
   }
 
   p,
   li {
     orphans: 3;
     widows: 3;
+  }
+
+  section.level3,
+  li {
+    break-inside: avoid-page;
   }
 
   a {

@@ -3,6 +3,8 @@ project:
   output-dir: _site
   render:
     - index.qmd
+  post-render:
+    - scripts/export-pdf.sh
 
 website:
   site-url: https://0minkoh.github.io/

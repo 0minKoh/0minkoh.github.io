@@ -18,14 +18,15 @@ quarto preview
 quarto render
 ```
 
-빌드 결과는 `_site/index.html`과 `_site/resume.pdf`에 생성됩니다. Typst는 Quarto에 포함된 버전을 사용하므로 따로 설치할 필요가 없습니다.
+빌드 결과는 `_site/index.html`과 `_site/resume.pdf`에 생성됩니다. PDF는 웹과 동일한 HTML 및 인쇄용 CSS를 Chromium으로 렌더링하므로 Chrome 또는 Chromium이 필요합니다.
 
 ## 파일별 역할
 
 - `resume.md`: 웹과 PDF가 함께 사용하는 이력서 내용의 유일한 원본
-- `index.qmd`: PDF 다운로드 링크를 표시하고 `resume.md`를 포함하는 진입 문서
+- `index.qmd`: PDF 다운로드 링크를 표시하고 `resume.md`를 포함하는 HTML 진입 문서
 - `_quarto.yml`: 사이트 주소, 출력 폴더, 언어 등 Quarto 프로젝트 설정
-- `styles.css`: 화면 및 인쇄용 이력서 스타일
+- `styles.css`: 반응형 화면 및 A4 인쇄가 공유하는 이력서 스타일
+- `scripts/export-pdf.sh`: 렌더링된 HTML을 Chromium으로 인쇄해 PDF 생성
 - `.github/workflows/publish.yml`: `main` push 시 GitHub Pages 자동 배포
 - `assets/`: 추후 이미지 등 정적 파일을 둘 위치
 

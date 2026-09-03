@@ -5,16 +5,6 @@ format:
   html:
     output-file: index.html
     format-links: false
-  typst:
-    output-file: resume.pdf
-    papersize: a4
-    margin:
-      x: 18mm
-      y: 16mm
-    mainfont: "Noto Sans CJK KR"
-    fontsize: 10pt
-    number-sections: false
-    page-numbering: false
 ---
 
 ::: {.content-visible when-format="html"}
