@@ -28,7 +28,7 @@ quarto render
 - `styles.css`: 반응형 화면 및 A4 인쇄가 공유하는 이력서 스타일
 - `scripts/export-pdf.sh`: 렌더링된 HTML을 Chromium으로 인쇄해 PDF 생성
 - `.github/workflows/publish.yml`: `main` push 시 GitHub Pages 자동 배포
-- `assets/`: 추후 이미지 등 정적 파일을 둘 위치
+- `assets/`: 프로필 사진 등 이력서에서 사용하는 정적 파일
 
 ## GitHub Pages 최초 설정
 

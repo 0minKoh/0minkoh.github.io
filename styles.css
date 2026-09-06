@@ -24,6 +24,18 @@ body {
   overflow-wrap: break-word;
 }
 
+/* Standalone Markdown previews do not include Quarto's main container. */
+body:has(> .profile-header) {
+  width: min(calc(100% - 2rem), 210mm);
+  min-height: 297mm;
+  margin: 2.5rem auto;
+  padding: 16mm 18mm;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.75rem 2rem rgb(31 41 51 / 8%);
+}
+
 #quarto-content {
   display: block;
 }
@@ -53,6 +65,72 @@ h1 {
   letter-spacing: -0.035em;
 }
 
+.profile-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 10rem;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.profile-copy {
+  min-width: 0;
+}
+
+.profile-photo {
+  display: block;
+  width: 10rem;
+  aspect-ratio: 413 / 531;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+}
+
+.headline {
+  margin: 0 0 0.25rem;
+  color: var(--accent);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.contact {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.contact a {
+  color: inherit;
+  text-decoration-color: var(--line);
+}
+
+.vision-block {
+  margin: 1.5rem 0 1.75rem;
+  padding: 1.1rem 1.25rem;
+  background: #f4f8fb;
+  border-left: 4px solid var(--accent);
+  border-radius: 0.25rem;
+}
+
+.vision-block p {
+  margin: 0.35rem 0 0;
+}
+
+.vision-block .vision-label {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.vision-block .vision-title {
+  margin: 0.15rem 0 0.4rem;
+  color: var(--text);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
 h2 {
   margin: 2.25rem 0 0.75rem;
   padding-bottom: 0.35rem;
@@ -72,8 +150,26 @@ ul {
   margin-bottom: 0.8rem;
 }
 
+code {
+  padding: 0.08em 0.25em;
+  color: var(--text);
+  background: #f3f5f7;
+  border-radius: 0.2rem;
+  font-size: 0.92em;
+}
+
 ul {
   padding-left: 1.25rem;
+}
+
+li > ul {
+  margin-top: 0.2rem;
+  margin-bottom: 0.55rem;
+  padding-left: 1.15rem;
+}
+
+li > ul > li {
+  margin-bottom: 0.2rem;
 }
 
 blockquote {
@@ -88,7 +184,7 @@ blockquote {
   display: inline-block;
   position: absolute;
   top: 16mm;
-  right: 18mm;
+  right: calc(18mm + 11rem);
   margin: 0;
   padding: 0.55rem 0.9rem;
   color: #ffffff;
@@ -106,6 +202,7 @@ blockquote {
 }
 
 @media (max-width: 40rem) {
+  body:has(> .profile-header),
   main#quarto-document-content.content {
     width: 100%;
     min-height: 0;
@@ -120,11 +217,24 @@ blockquote {
     position: static;
     margin: 0 0 1.5rem;
   }
+
+  .profile-header {
+    grid-template-columns: minmax(0, 1fr) 7.5rem;
+    gap: 1rem;
+  }
+
+  .profile-photo {
+    width: 7.5rem;
+  }
+
+  .vision-block {
+    padding: 0.9rem 1rem;
+  }
 }
 
 @page {
   size: A4;
-  margin: 16mm 18mm;
+  margin: 13mm 16mm;
 }
 
 @media print {
@@ -132,10 +242,20 @@ blockquote {
   body {
     background: #ffffff;
     color: #000000;
-    font-size: 10pt;
+    font-size: 9.25pt;
+    line-height: 1.43;
   }
 
   main#quarto-document-content.content {
+    width: 100%;
+    min-height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+  }
+
+  body:has(> .profile-header) {
     width: 100%;
     min-height: auto;
     margin: 0;
@@ -152,14 +272,58 @@ blockquote {
     font-size: 24pt;
   }
 
-  h2 {
-    margin-top: 14pt;
+  .headline {
+    font-size: 11pt;
+  }
+
+  .contact {
+    margin-bottom: 10pt;
+    font-size: 8.5pt;
+  }
+
+  .profile-header {
+    grid-template-columns: minmax(0, 1fr) 30mm;
+    gap: 6mm;
+  }
+
+  .profile-photo {
+    width: 30mm;
+    border-radius: 2pt;
+  }
+
+  .vision-block {
+    margin: 10pt 0 12pt;
+    padding: 8pt 10pt;
+    background: #f4f8fb !important;
+    border-left-width: 3pt;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .vision-block .vision-title {
     font-size: 13pt;
   }
 
-  h3 {
+  h2 {
     margin-top: 9pt;
-    font-size: 10.5pt;
+    margin-bottom: 4pt;
+    font-size: 12.5pt;
+  }
+
+  h3 {
+    margin-top: 7pt;
+    font-size: 10pt;
+  }
+
+  p,
+  ul {
+    margin-top: 2pt;
+    margin-bottom: 4pt;
+  }
+
+  li > ul {
+    margin-top: 1pt;
+    margin-bottom: 3pt;
   }
 
   h1,
@@ -174,8 +338,11 @@ blockquote {
     widows: 3;
   }
 
-  section.level3,
   li {
+    break-inside: avoid-page;
+  }
+
+  .vision-block {
     break-inside: avoid-page;
   }
 
