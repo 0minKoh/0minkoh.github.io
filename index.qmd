@@ -7,8 +7,4 @@ format:
     format-links: false
 ---
 
-::: {.content-visible when-format="html"}
-[PDF 다운로드](resume.pdf){.pdf-download download="resume.pdf"}
-:::
-
 {{< include resume.md >}}
