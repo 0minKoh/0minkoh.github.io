@@ -33,6 +33,8 @@ fi
   --disable-gpu \
   --no-pdf-header-footer \
   --allow-file-access-from-files \
+  --timeout=15000 \
+  --virtual-time-budget=3000 \
   --print-to-pdf="${pdf_path}" \
   "file://${html_path}"
 
