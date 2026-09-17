@@ -3,6 +3,7 @@ project:
   output-dir: _site
   render:
     - index.qmd
+    - tech-po/index.qmd
   post-render:
     - scripts/export-pdf.sh
 

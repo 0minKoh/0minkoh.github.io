@@ -3,13 +3,6 @@
 set -euo pipefail
 
 project_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
-html_path="${project_dir}/_site/index.html"
-pdf_path="${project_dir}/_site/resume.pdf"
-
-if [[ ! -f "${html_path}" ]]; then
-  echo "HTML output not found: ${html_path}" >&2
-  exit 1
-fi
 
 chrome_path=""
 for candidate in google-chrome google-chrome-stable chromium chromium-browser; do
@@ -28,6 +21,14 @@ if [[ -z "${chrome_path}" ]]; then
   exit 1
 fi
 
+for variant in "" "tech-po/"; do
+  html_path="${project_dir}/_site/${variant}index.html"
+  pdf_path="${project_dir}/_site/${variant}resume.pdf"
+  if [[ ! -f "${html_path}" ]]; then
+    echo "HTML output not found: ${html_path}" >&2
+    exit 1
+  fi
+
 "${chrome_path}" \
   --headless=new \
   --disable-gpu \
@@ -39,3 +40,4 @@ fi
   "file://${html_path}"
 
 test -s "${pdf_path}"
+done

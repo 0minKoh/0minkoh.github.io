@@ -1,0 +1,10 @@
+---
+pagetitle: "고영민 · Technical PO 이력서"
+lang: ko-KR
+format:
+  html:
+    output-file: index.html
+    format-links: false
+---
+
+{{< include resume.md >}}
