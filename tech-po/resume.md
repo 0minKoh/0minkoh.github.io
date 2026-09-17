@@ -7,7 +7,7 @@
 
 <p>고객 문제를 정의하고, 제품의 우선순위와 실행을 연결합니다.</p>
 
-<p class="career-summary">5년차 엔지니어 · 총 경력 4년 3개월</p>
+<p class="career-summary">제품 기획·개발·운영 경력 4년 3개월</p>
 
 <p class="personal-info">2003년생 · <a href="tel:+821068510661">+82 10-6851-0661</a></p>
 
@@ -41,11 +41,13 @@
 
 ## 경력
 
-### 수파자 · Full-Stack Engineer (App, Web, AI)
+### 수파자 · Problem Solver · 기획·개발·운영
+
+<!-- Problem Solver는 수행 역할을 설명하는 표현. 공식 인사 직무명 Full-Stack Engineer (App, Web, AI)와 구분한다. 2026.09.17 사용자 요청으로 Technical PO 버전에 적용. -->
 
 2022.06 - 현재 · 4년 3개월 · 정규직 <!-- 경력 산정 기준: 2026.09, 입사 월 기준 -->
 
-사업·운영 담당자와 협업하며 담당 영역을 `Web → App → DX(Digital Transformation, 디지털 전환)/AX(AI Transformation, AI 전환) → AI Application → Native & Edge AI`로 확장했습니다. 담당한 프로젝트는 기술적 의사결정부터 설계, 개발, 배포, 운영까지 End-to-End로 수행했습니다.
+사업·운영 담당자와 함께 고객과 현장의 문제를 구체화하고, **보유 자산과 사업·기술 제약을 바탕으로 해결 방향과 실행 우선순위를 제안**했습니다. 기획·개발·운영을 연결해 해결책을 직접 실행하고, **수요·이용 데이터와 비용을 근거로 검증·개선·확장에 참여**했습니다.
 
 ::: {.resume-project}
 #### 소방 히어로 멤버십 · 하나의 핵심 혜택에서 복지 플랫폼으로
