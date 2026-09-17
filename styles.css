@@ -107,12 +107,24 @@ h1,
   text-decoration-color: var(--line);
 }
 
+.summary-block,
 .vision-block {
   margin: 1.5rem 0 1.75rem;
   padding: 1.1rem 1.25rem;
   background: #f4f8fb;
   border-left: 4px solid var(--accent);
   border-radius: 0.25rem;
+}
+
+.summary-block h3 {
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.summary-block > :last-child {
+  margin-bottom: 0;
 }
 
 .vision-block p {
@@ -242,6 +254,7 @@ blockquote {
     width: 7.5rem;
   }
 
+  .summary-block,
   .vision-block {
     padding: 0.9rem 1rem;
   }
@@ -264,7 +277,7 @@ blockquote {
     background: #ffffff;
     color: #000000;
     font-size: 9.75pt;
-    line-height: 1.4;
+    line-height: 1.65;
   }
 
   main#quarto-document-content.content {
@@ -314,6 +327,7 @@ blockquote {
     border-radius: 2pt;
   }
 
+  .summary-block,
   .vision-block {
     margin: 10pt 0 12pt;
     padding: 8pt 10pt;
@@ -323,6 +337,7 @@ blockquote {
     -webkit-print-color-adjust: exact;
   }
 
+  .summary-block h3,
   .vision-block .vision-title {
     font-size: 13pt;
   }
@@ -350,16 +365,6 @@ blockquote {
     white-space: normal;
   }
 
-  .resume-project {
-    break-inside: avoid-page;
-  }
-
-  #교육출판-기술-지식의-진입-장벽을-낮추다,
-  #학력,
-  #스킬 {
-    break-inside: avoid-page;
-  }
-
   p,
   ul {
     margin-top: 2pt;
@@ -367,8 +372,12 @@ blockquote {
   }
 
   li > ul {
-    margin-top: 1pt;
-    margin-bottom: 3pt;
+    margin-top: 3pt;
+    margin-bottom: 6pt;
+  }
+
+  li > ul > li {
+    margin-bottom: 4pt;
   }
 
   h1,
@@ -384,8 +393,15 @@ blockquote {
     widows: 3;
   }
 
-  li {
+  /* Keep each explanation intact, not its entire nested category. */
+  li:not(:has(ul, ol)) {
     break-inside: avoid-page;
+  }
+
+  #경력,
+  #주요-경험,
+  #학력 {
+    break-before: page;
   }
 
   .vision-block {
