@@ -21,7 +21,7 @@ if [[ -z "${chrome_path}" ]]; then
   exit 1
 fi
 
-for variant in "" "tech-po/"; do
+for variant in "" "tech-po/" "ax-educator/"; do
   html_path="${project_dir}/_site/${variant}index.html"
   pdf_path="${project_dir}/_site/${variant}resume.pdf"
   if [[ ! -f "${html_path}" ]]; then

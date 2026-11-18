@@ -1,0 +1,13 @@
+---
+pagetitle: "고영민 · AX 컨설턴트 & 강사 이력서"
+lang: ko-KR
+format:
+  html:
+    output-file: index.html
+    format-links: false
+    css:
+      - ../styles.css
+      - styles.css
+---
+
+{{< include resume.md >}}

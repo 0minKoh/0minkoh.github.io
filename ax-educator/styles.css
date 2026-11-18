@@ -1,0 +1,277 @@
+/* Role-based typography for this resume only. */
+body {
+  word-break: keep-all;
+}
+
+.profile-tagline {
+  margin: 0.55rem 0;
+  line-height: 1.55;
+}
+
+.career-summary {
+  margin: 0.6rem 0 0.3rem;
+  font-size: 0.93rem;
+  font-weight: 600;
+}
+
+.personal-info {
+  margin: 0.55rem 0 0.15rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.personal-info a {
+  color: inherit;
+  text-decoration-color: var(--line);
+}
+
+.contact {
+  margin: 0.15rem 0 0;
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.contact a {
+  white-space: nowrap;
+}
+
+.resume-actions {
+  margin: 0.7rem 0 0;
+}
+
+.resume-actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 650;
+}
+
+.resume-actions a:hover {
+  background: #f4f8fb;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+h2 {
+  margin: 1.8rem 0 0.8rem;
+  font-size: 1.35rem;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  margin: 1.3rem 0 0.35rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+h4 {
+  margin: 1rem 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.summary-block {
+  margin: 1.3rem 0 1.5rem;
+  padding: 1rem 1.15rem;
+}
+
+.summary-block h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.summary-block .term-note {
+  margin: 0.7rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.entry-meta {
+  margin: 0.1rem 0 0.35rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.entry-role,
+.entry-result {
+  margin: 0.2rem 0 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.company-description {
+  margin: 0.2rem 0 0.8rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+li {
+  margin-bottom: 0.35rem;
+}
+
+@media screen and (max-width: 48rem) {
+  .profile-header {
+    grid-template-columns: minmax(0, 1fr) 5rem;
+    column-gap: 0.8rem;
+    row-gap: 0.35rem;
+  }
+
+  .profile-copy {
+    display: contents;
+  }
+
+  .profile-name {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+    font-size: 2.05rem;
+    align-self: end;
+  }
+
+  .headline {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0;
+    font-size: 1.04rem;
+    align-self: start;
+  }
+
+  .profile-header > p:has(.profile-photo) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .profile-photo {
+    width: 5rem;
+  }
+
+  .profile-tagline,
+  .career-summary,
+  .personal-info,
+  .contact {
+    grid-column: 1 / -1;
+    margin: 0.15rem 0;
+  }
+
+  .profile-tagline {
+    margin-top: 0.6rem;
+  }
+
+  .resume-actions {
+    grid-column: 1 / -1;
+    margin-top: 0.45rem;
+  }
+
+  .summary-block {
+    padding: 0.9rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media print {
+  .resume-actions {
+    display: none;
+  }
+
+  h2 {
+    margin: 11pt 0 5pt;
+    font-size: 13pt;
+  }
+
+  h3 {
+    margin: 8pt 0 3pt;
+    font-size: 11pt;
+    line-height: 1.35;
+  }
+
+  h4 {
+    margin: 7pt 0 3pt;
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+
+  .profile-tagline {
+    margin: 4pt 0;
+  }
+
+  .career-summary {
+    margin: 5pt 0 2pt;
+    font-size: 9.5pt;
+  }
+
+  .personal-info,
+  .contact {
+    margin: 2pt 0;
+    font-size: 8.5pt;
+  }
+
+  .summary-block {
+    margin: 9pt 0 10pt;
+    padding: 7pt 9pt;
+  }
+
+  .summary-block h3 {
+    margin: 0 0 4pt;
+    font-size: 10.5pt;
+  }
+
+  .summary-block .term-note {
+    margin: 5pt 0 0;
+    font-size: 8.2pt;
+  }
+
+  .entry-meta {
+    margin: 0 0 2pt;
+    font-size: 8.7pt;
+  }
+
+  .entry-role,
+  .entry-result {
+    margin: 1pt 0 3pt;
+    font-size: 9.5pt;
+  }
+
+  .company-description {
+    margin: 1pt 0 5pt;
+    font-size: 9pt;
+  }
+
+  li {
+    margin-bottom: 3pt;
+  }
+
+  #학력,
+  #경력,
+  #컨설팅실무 {
+    break-before: auto;
+  }
+
+  #publishing {
+    break-before: page;
+  }
+}

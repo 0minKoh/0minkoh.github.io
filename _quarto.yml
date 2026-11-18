@@ -4,6 +4,7 @@ project:
   render:
     - index.qmd
     - tech-po/index.qmd
+    - ax-educator/index.qmd
   post-render:
     - scripts/export-pdf.sh
 
